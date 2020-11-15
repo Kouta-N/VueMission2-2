@@ -10,7 +10,6 @@
       rows="20" 
       :value="customerMessage" 
       @input="updateMessage"></textarea>
-  
    <nav>
       <button> 
         <router-link to="/checkDisp">次へ進む ></router-link>
@@ -22,22 +21,17 @@
   </div>
 </template>
 
-
 <script>
 export default {
-
   computed: {
     customerMessage(){
       return  this.$store.getters.customerMessage;
     }
   },
-
   methods: {
     updateMessage(e){
-        this.$store.dispatch("updateMessage",e.target.value);
+        this.$store.dispatch("updateMessage", e.target.value);
     }
   },
-
 };
-
 </script>

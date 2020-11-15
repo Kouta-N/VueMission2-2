@@ -5,42 +5,35 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     //form1
-    gender: "",
-    yearText: "",
-    monthText: "",
-    dayText: "",
+    gender: '',
+    yearText: '',
+    monthText: '',
+    dayText: '',
     //form2
-    insuranceText: "",
-    insuranceTextThreemonthes: "",
-    iinsuranceValueFiveyears: "",
+    insuranceText: '',
+    insuranceTextThreemonthes: '',
+    iinsuranceValueFiveyears: '',
     //form3
-    customerMessage: "",
+    customerMessage: '',
   },
-
   getters:{
-    gender: state => state.gender,
-
+    gender: state => state.gender, 
     customerMessage: state => state.customerMessage
   },
-
   mutations:{
-    updateGender(state,getGender){
+    updateGender(state, getGender){
       state.gender = getGender;
     },
-
-    updateMessage(state,newMessage){
+    updateMessage(state, newMessage){
         state.customerMessage = newMessage;
     },
   },
-
   actions: {
-    updateGender({commit},getGender){
-      commit("updateGender",getGender);
+    updateGender({commit}, getGender){
+      commit("updateGender", getGender);
     },
-
-    updateMessage({commit},newMessage){
-      commit("updateMessage",newMessage);
+    updateMessage({commit}, newMessage){
+      commit("updateMessage", newMessage);
     },
-  },
-    
+  },   
 })
