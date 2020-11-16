@@ -9,13 +9,13 @@
         <input 
         type="radio" 
         id="manId" 
-        value='男性'
+        value="男性"
         v-model="getGender">
         <label for="manLabel">男性</label>        
         <input 
         type="radio" 
         id="womanId" 
-        value='女性' 
+        value="女性"
         v-model="getGender">
         <label for="womanLabel">女性</label>
       </p>

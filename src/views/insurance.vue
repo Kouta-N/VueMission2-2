@@ -6,12 +6,12 @@
       <pre>現在、生命保険に加入されていますか？</pre>
         <input type="radio" 
         id="insuranceIdYes" 
-        value='はい' 
+        value="はい" 
         v-model="insurance">
         <label for="insuranceLabelYes">はい</label>
         <input type="radio" 
         id="insuranceIdNo" 
-        value='いいえ'
+        value="いいえ"
         v-model="insurance">
         <label for="insuranceLabelNo">いいえ</label>
           {{ inputInsurance(insurance) }}
@@ -20,12 +20,12 @@
         <pre>現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</pre>
         <input type="radio" 
         id="insuranceIdYesThreemonthes" 
-        value='はい' 
+        value="はい" 
         v-model="Threemonthes">
         <label for="insuranceLabelYesThreemonthes">はい</label>
         <input type="radio" 
         id="insuranceIdNoThreemonthes" 
-        value='いいえ' 
+        value="いいえ" 
         v-model="Threemonthes">
         <label for="insuranceLabelNoThreeonth">いいえ</label>
       </div>
