@@ -57,26 +57,26 @@ export default new Vuex.Store({
   },
   actions: {
     updateGender({commit}, getGender){
-      commit("updateGender", getGender);
+      commit('updateGender', getGender);
     },
     updateYearText({commit}, getYeartext){
-      commit("updateYearText", getYeartext);
+      commit('updateYearText', getYeartext);
     },
     updateMonthText({commit}
       , getMonthText){
-      commit("updatemonthText", getMonthText);
+      commit('updatemonthText', getMonthText);
     },
     updateInsuranceText({commit}, getInsuranceText){
-      commit("updateInsuranceTextThreemonthes", getInsuranceText);
+      commit('updateInsuranceTextThreemonthes', getInsuranceText);
     },
     updateInsuranceTextThreemonthes({commit}, getInsuranceTextThreemonthes){
-      commit("updateInsuranceTextThreemonthes", getInsuranceTextThreemonthes);
+      commit('updateInsuranceTextThreemonthes', getInsuranceTextThreemonthes);
     },
     updateInsuranceTextFiveyears({commit}, getInsuranceTextFiveyears){
-      commit("updateInsuranceTextFiveyears", getInsuranceTextFiveyears);
+      commit('updateInsuranceTextFiveyears', getInsuranceTextFiveyears);
     },
     updateMessage({commit}, newMessage){
-      commit("updateMessage", newMessage);
+      commit('updateMessage', newMessage);
     },
   },   
 })

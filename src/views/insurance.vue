@@ -68,7 +68,7 @@ export default {
               return this.$store.state.insuranceText;
             },
             set(value) {
-            this.$store.commit("updateInsuranceText", value);
+            this.$store.commit('updateInsuranceText', value);
             },
        },
        insuranceTextThreemonthes: {
@@ -76,7 +76,7 @@ export default {
               return this.$store.state.insuranceTextThreemonthes;
             },
             set(value) {
-            this.$store.commit("updateInsuranceTextThreemonthes", value);
+            this.$store.commit('updateInsuranceTextThreemonthes', value);
             },
        },
        insuranceTextFiveyears: {
@@ -84,18 +84,18 @@ export default {
               return this.$store.state.insuranceTextFiveyears;
             },
             set(value) {
-            this.$store.commit("updateInsuranceTextFiveyears", value);
+            this.$store.commit('updateInsuranceTextFiveyears', value);
        },
      },
    },
   methods: {
     showThreemonthesMethod: function () {        
-      if(this.insuranceText !== ""){
+      if(this.insuranceText !== ''){
            this.showThreemonthes = true;
        }
     },
     showFiveyearsMethod: function() {
-      if(this.insuranceTextThreemonthes !== ""){          
+      if(this.insuranceTextThreemonthes !== ''){          
         this.showFiveyears = true;
       }
     },

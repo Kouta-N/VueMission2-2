@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     updateMessage(e){
-        this.$store.dispatch("updateMessage", e.target.value);
+        this.$store.dispatch('updateMessage', e.target.value);
     }
   },
 };

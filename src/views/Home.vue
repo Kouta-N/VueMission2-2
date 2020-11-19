@@ -65,7 +65,7 @@ export default {
               return this.$store.state.genderText;
             },
             set(value) {
-            this.$store.commit("updateGenderText", value);
+            this.$store.commit('updateGenderText', value);
             },
        },
        yearText: {
@@ -73,7 +73,7 @@ export default {
               return this.$store.state.yearText;
             },
             set(value) {
-            this.$store.commit("updateYearText", value);
+            this.$store.commit('updateYearText', value);
             },
        },
        monthText: {
@@ -81,7 +81,7 @@ export default {
               return this.$store.state.monthText;
             },
             set(value) {
-            this.$store.commit("updateMonthText", value);
+            this.$store.commit('updateMonthText', value);
        },
      },
       dayText: {
@@ -89,7 +89,7 @@ export default {
               return this.$store.state.dayText;
             },
             set(value) {
-            this.$store.commit("updateDayText", value);
+            this.$store.commit('updateDayText', value);
             }
       },
    },
