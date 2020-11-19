@@ -7,44 +7,41 @@
         <input type="radio" 
         id="insuranceIdYes" 
         value="はい" 
-        v-model="insurance">
+        v-model="insuranceText">
         <label for="insuranceLabelYes">はい</label>
         <input type="radio" 
         id="insuranceIdNo" 
         value="いいえ"
-        v-model="insurance">
+        v-model="insuranceText"> 
         <label for="insuranceLabelNo">いいえ</label>
-          {{ inputInsurance(insurance) }}
           {{ showThreemonthesMethod() }}
       <div  v-if="showThreemonthes">
         <pre>現在入院中ですか。または、最近3ヶ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？</pre>
         <input type="radio" 
         id="insuranceIdYesThreemonthes" 
         value="はい" 
-        v-model="Threemonthes">
+        v-model="insuranceTextThreemonthes">
         <label for="insuranceLabelYesThreemonthes">はい</label>
         <input type="radio" 
         id="insuranceIdNoThreemonthes" 
         value="いいえ" 
-        v-model="Threemonthes">
+        v-model="insuranceTextThreemonthes">
         <label for="insuranceLabelNoThreeonth">いいえ</label>
       </div>
-        {{ inputInsuranceThreemonthes(Threemonthes) }}
         {{ showFiveyearsMethod() }}
       <div v-if="showFiveyears">
         <pre>過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？</pre>
         <input type="radio" 
         id="insuranceIdYesFiveyears" 
         value='はい' 
-        v-model="Fiveyears">
+        v-model="insuranceTextFiveyears">
         <label for="insuranceLabelYesFiveyears">はい</label>
         <input type="radio" 
         id="insuranceIdNoFiveyears" 
         value='いいえ' 
-        v-model="Fiveyears">
+        v-model="insuranceTextFiveyears">
         <label for="insuranceLabelNoFiveyears">いいえ</label>  
       </div>
-      {{ inputInsuranceFiveyears(Fiveyears) }}
       <br><br>
     <nav>
       <button> 
@@ -61,33 +58,47 @@
 export default {
     data: function () {
       return {
-        insurance:'',
-        Threemonthes:'',
-        Fiveyears:'',
         showThreemonthes:false,
         showFiveyears:false,
       }
     },
-    methods: {
-        showThreemonthesMethod: function () {
-          if(this.insurance !== ""){
-            this.showThreemonthes = true;
-          }
-        },
-        showFiveyearsMethod: function() {
-          if(this.Threemonthes !== ""){
-            this.showFiveyears = true;
-          }
-        },
-      inputInsurance(insuranceValue){
-          this.$store.state.insuranceText = insuranceValue;
-      },
-      inputInsuranceThreemonthes(insuranceValueThreemonthes){
-          this.$store.state.insuranceTextThreemonthes = insuranceValueThreemonthes;
-      },
-      inputInsuranceFiveyears(insuranceValueFiveyears){
-          this.$store.state.insuranceTextFiveyears = insuranceValueFiveyears;
-      },
+    computed: {
+       insuranceText: {
+            get(){
+              return this.$store.state.insuranceText;
+            },
+            set(value) {
+            this.$store.commit("updateInsuranceText", value);
+            },
+       },
+       insuranceTextThreemonthes: {
+            get(){
+              return this.$store.state.insuranceTextThreemonthes;
+            },
+            set(value) {
+            this.$store.commit("updateInsuranceTextThreemonthes", value);
+            },
+       },
+       insuranceTextFiveyears: {
+            get(){
+              return this.$store.state.insuranceTextFiveyears;
+            },
+            set(value) {
+            this.$store.commit("updateInsuranceTextFiveyears", value);
+       },
+     },
+   },
+  methods: {
+    showThreemonthesMethod: function () {        
+      if(this.insuranceText !== ""){
+           this.showThreemonthes = true;
+       }
     },
+    showFiveyearsMethod: function() {
+      if(this.insuranceTextThreemonthes !== ""){          
+        this.showFiveyears = true;
+      }
+    },
+  },
 };
 </script>
